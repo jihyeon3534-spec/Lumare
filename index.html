@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMARE</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <!-- ScrollSmoother requires ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+
+    <link rel="shortcut icon" href="./images/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=nanum-myeongjo:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-myeongjo.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+    
+    
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    <header id="main-header">
+        <div class="inner">
+            <div id="logo">
+                <h1><a href="#"><img src="./img/logo.svg" alt="로고"></a></h1>
+            </div>
+            <nav id="gnb">
+                <ul>
+                    <li class="none active"><a href="reservation.html">RESERVATION</a></li>
+                    <li class="none active"><a href="promotion.html">PROMOTION</a></li>
+                    <li class="none"><a href="#">FACILITIES</a></li>
+                    <li>
+                        <a href="#" class="btn-menu-open">
+                            <img src="./img/menu_22dp_F3EFE7_FILL0_wght400_GRAD0_opsz24.svg" alt="메뉴열기">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <div id="side-nav">
+        <div class="side-content">
+            <div class="side-nav-header">
+                <div class="side-logo">
+                    <img src="./img/logo_brown.png" alt="로고">
+                </div>
+                <button class="btn-menu-close">&times;</button>
+            </div>
+
+            <div class="menu-container">
+                <div class="main-display-area">
+                    <div id="sub-img-area">
+                        <div class="sub-img-list active" id="prologue-img"><img src="./img/ChatGPT Image 2026년 2월 4일 오전 09_31_17.png"></div>
+                        <div class="sub-img-list" id="rooms-img"><img src="./img/Ocean View Master Bedroom.png"></div>
+                        <div class="sub-img-list" id="experience-img"><img src="./img/afternoon.png"></div>
+                        <div class="sub-img-list" id="promotion-img"><img src="./img/Copy of Sunlight Shimmering on Water (윤슬).png"></div>
+                        <div class="sub-img-list" id="reservation-img"><img src="./img/ChatGPT Image 2026년 2월 4일 오후 02_00_41.png"></div>
+                    </div>
+                </div>
+
+                <nav class="main-nav">
+                    <ul class="main-menu-names">
+                        <li class="menu-item">
+                            <a href="#" class="tab-link" data-target="prologue">PROLOGUE</a>
+                            <div class="sub-menu-panel">
+                                <div class="links">
+                                    <a href="#">풍경</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="tab-link" data-target="rooms">ROOMS</a>
+                            <div class="sub-menu-panel">
+                                <div class="links">
+                                    <a href="#">거실&부엌</a>
+                                    <a href="#">침실1(퀸베드)</a>
+                                    <a href="#">침실2(싱글베드)</a>
+                                    <a href="#">파우더룸</a>
+                                    <a href="#">다이닝룸</a>
+                                    <a href="#">프라이빗 자쿠지</a>
+                                    <a href="#">시네마존</a>
+                                    <a href="#">개별테라스</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="tab-link" data-target="experience">EXPERIENCE</a>
+                            <div class="sub-menu-panel">
+                                <div class="links">
+                                    <a href="#">야외온수 수영장</a>
+                                    <a href="#">아로마테라피</a>
+                                    <a href="#">자쿠지</a>
+                                    <a href="#">야경</a>
+                                    <a href="#">불멍</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="tab-link" data-target="promotion">PROMOTION</a>
+                            <div class="sub-menu-panel">
+                                <div class="links">
+                                    <a href="#">입욕제</a>
+                                    <a href="#">빔프로젝터</a>
+                                    <a href="#">커피머신</a>
+                                    <a href="#">오션뷰</a>
+                                    <a href="#">따뜻한 차</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="tab-link" data-target="reservation">RESERVATION</a>
+                            <div class="sub-menu-panel">
+                                <div class="links">
+                                    <a href="#">예약안내</a>
+                                    <a href="#">실시간예약</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+    <main>
+        <section id="main_view">
+            <div class="bg"><video src="./img/grok-video-3f9ae308-b440-4cd3-848f-e5c6a35ca33e (1).mp4" autoplay muted loop playsinline></video></div>
+            <div class="contents">
+                <p><img src="./img/logo.png" alt="LUMARE"></p>
+                <p>달빛과 물결, 그리고 머무는 시간</p>
+            </div>
+            <div class="scroll_wrap">
+                <div class="text_area">
+                    <p>scroll down</p>
+                    <img src="./img/keyboard_arrow_down_24dp_F6F1E8_FILL0_wght400_GRAD0_opsz24.svg" alt="scroll down" class="svg_scroll">
+                </div>
+            </div>
+        </section>
+        <section id="experience">
+            <div class="inner">
+                <div class="text_center" >
+                    <p>루마레는 단순히 <b>‘보는’</b> 공간이 아닌,</p><br>
+                    <p>당신의 시간이 머무는 <b>‘경험’</b>이 됩니다.</p>
+                </div>
+                <div class="divider-vertical"></div>
+                <div class="text_area">
+                    <p>파도의 호흡을 닮은 고요한 낮과,<br>은밀한 달빛이 스며드는 밤<br>
+                    우리는 이 완벽한 대조 속에서 당신만의 온전한 쉼을 설계합니다.</p>
+                </div>
+            </div>
+        </section>
+        <section id="page">
+    <div class="compare-container">
+        
+        <div class="view-layer night">
+            <div class="bg-img" style="background-image: url('./img/ChatGPT Image 2026년 1월 28일 오후 12_12_21.png');"></div>
+            <div class="content-wrapper">
+                <div class="content">
+                    <p class="title">NIGHT</p>
+                    <p class="sub_title">PRIVATE DEEP</p>
+                    <p class="b_title">밤에는 조용히 깊어져,<br>나에게 닿습니다</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-layer day">
+            <div class="bg-img" style="background-image: url('./img/morning.png');"></div>
+            <div class="content-wrapper">
+                <div class="content">
+                    <p class="title">DAY</p>
+                    <p class="sub_title">OPEN VIEW</p>
+                    <p class="b_title">낮에는 시야가 열리고,<br>자연이 그대로 머뭅니다</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="compare-handle">
+            <div class="handle-line"></div>
+            <div class="handle-circle">
+                <img src="./img/arrow.svg" alt="#">
+            </div>
+        </div>
+
+    </div>
+</section>
+        <section id="space">
+    <div class="inner">
+        <div class="text_center">
+            <p>머무는 곳의 결<br>공간의 흐름을 따라간다</p>
+            <p class="english">The feel of staying, as space gently unfolds</p>
+        </div>
+    </div>
+
+    <div class="room_wrapper">
+        <div class="room_container">
+            <div class="room_item">
+                <div class="img"><img src="./img/Copy of Ocean View Living Room - Wood & Glass.png" alt=""></div>
+                <p class="t1">Dining & Kitchen</p>
+                <p class="t2">창으로 부서지는 햇살과 잔잔한 파도 소리가 머무는 공간</p>
+            </div>
+            <div class="room_item">
+                <div class="img"><img src="./img/Bedroom with Sheer Curtains.png" alt=""></div>
+                <p class="t1">Bedroom(Queen Bed)</p>
+                <p class="t2">하루의 끝, 고요가 내려앉는 시간에 가장 깊은 휴식을 허락하는 침실</p>
+            </div>
+            <div class="room_item">
+                <div class="img"><img src="./img/singlebed.png" alt=""></div>
+                <p class="t1">Bedroom(Single Bed)</p>
+                <p class="t2">혼자만의 리듬으로 하루를 시작하고 마무리하는 아늑한 공간</p>
+            </div>
+            <div class="room_item">
+                <div class="img"><img src="./img/Copy of Minimalist Bathroom (1).png" alt=""></div>
+                <p class="t1">Powder Room</p>
+                <p class="t2">분주함을 내려놓고 오롯이 나에게 집중하는 정리의 시간</p>
+            </div>
+            <div class="room_item">
+                <div class="img"><img src="./img/dinningroom.png" alt=""></div>
+                <p class="t1">Dinning Room</p>
+                <p class="t2">바람과 하늘이 자연스럽게 스며드는, 대화가 길어지는 공간</p>
+            </div>
+            <div class="room_item">
+                <div class="img"><img src="./img/Indoor Hinoki Jacuzzi Spa.png" alt=""></div>
+                <p class="t1">Private Jacuzzi</p>
+                <p class="t2">따뜻한 물결 위로 하루의 긴장이 천천히 풀려나는 휴식의 순간</p>
+            </div>
+            <div class="room_item">
+                <div class="img"><img src="./img/Lofted Living Cinema.png" alt=""></div>
+                <p class="t1">Cinema Zone</p>
+                <p class="t2">밤이 깊어질수록 더욱 선명해지는, 나만의 작은 영화관</p>
+            </div>
+            <div class="room_item">
+                <div class="img"><img src="./img/Private Infinity Terrace.png" alt=""></div>
+                <p class="t1">Private terrace</p>
+                <p class="t2">햇살과 바람이 머무는, 오직 나만을 위한 숲속의 휴식처</p>
+            </div>
+        </div> 
+    </div>
+
+    <div class="more_btn_wrap">
+        <button type="button" class="btn_more">VIEW MORE</button>
+    </div>
+</section>
+
+        <section id="day">
+            <div class="inner">
+                <div class="service">
+                    <p class="english">A DAY IN LUMARE</p>
+                    <p>루마레에서의 하루</p>
+                </div>
+                <div class="icon">
+                    <ul>
+                        <li>
+                    <div class="img-box">
+                        <img src="./img/1-01.png" alt="#">
+                    </div>
+                    입욕제
+                </li>
+                <li>
+                    <div class="img-box">
+                        <img src="./img/1-02.png" alt="#">
+                    </div>
+                    빔프로젝터
+                </li>
+                <li>
+                    <div class="img-box">
+                        <img src="./img/1-03.png" alt="#">
+                    </div>
+                    커피머신
+                </li>
+                <li>
+                    <div class="img-box">
+                        <img src="./img/1-04.png" alt="#">
+                    </div>
+                    오션뷰
+                </li>
+                <li>
+                    <div class="img-box">
+                        <img src="./img/1-05.png" alt="#">
+                    </div>
+                    따뜻한 차
+                </li>
+            </ul>
+                </div>
+            </div>
+            <div class="flow_area">
+                <div class="wave layer1"></div>
+                <div class="wave layer2"></div>
+                <div class="wave layer3"></div>
+            </div>
+        </section>
+        <section id="moment">
+    <div class="inner">
+        <div class="memorable">
+            <p>MEMORABLE MOMENTS</p>
+            <p>기억에 남을 찰나의 순간들</p>
+        </div>
+
+        <div class="slide_container">
+            <ul class="slide_wrapper">
+                
+                <li class="slide_item">
+                    <div class="content_box">
+                        <div class="promotion">
+                            <ul>
+                                <li class="img1"><img src="./img/Zen Spa with Forest View.png" alt="자쿠지 메인"></li>
+                                <li class="img2"><img src="./img/Soap and Stone Spa Scene.png" alt="어메니티"></li>
+                                <li class="img3"><img src="./img/Zoomed Water Surface.png" alt="물결"></li>
+                            </ul>
+                            <div class="promotion_title">
+                                <p>감성 자쿠지</p>
+                                <p>각자의 공간에서 열린 하늘, 바람과 교감하며<br>따뜻하게 여행의 피로를 씻어내세요.</p>
+                                <p class="more_btn"><a href="#">MORE VIEW</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="slide_item">
+                    <div class="content_box">
+                        <div class="promotion">
+                            <ul>
+                                <li class="img1"><img src="./img/Villa View without Plant.png" alt="수영장 메인"></li>
+                                <li class="img2"><img src="./img/Outdoor Candle and Bath Salts.png" alt="어메니티"></li>
+                                <li class="img3"><img src="./img/Floating Bar Service Mockup.png" alt="물결"></li>
+                            </ul>
+                            <div class="promotion_title">
+                                <p>야외온수 수영장</p>
+                                <p>바다의 풍경을 곁들인 특별한 휴식 시간.<br>사계절 내내 따뜻한 온수풀을 즐겨보세요.</p>
+                                <p class="more_btn"><a href="#">MORE VIEW</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="slide_item">
+                    <div class="content_box">
+                        <div class="promotion">
+                            <ul>
+                                <li class="img1"><img src="./img/Zen Diffuser View.png" alt="테라피 메인"></li>
+                                <li class="img2"><img src="./img/Essential Oil Mockup.png" alt="어메니티"></li>
+                                <li class="img3"><img src="./img/Oil Diffuser & Stones.png" alt="물결"></li>
+                            </ul>
+                            <div class="promotion_title">
+                                <p>아로마테라피</p>
+                                <p>지친 몸과 마음을 달래주는 향기로운 시간.<br>전문가의 손길로 진정한 힐링을 경험하세요.</p>
+                                <p class="more_btn"><a href="#">MORE VIEW</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="slide_item">
+                    <div class="content_box">
+                        <div class="promotion">
+                            <ul>
+                                <li class="img1"><img src="./img/Luxury Fire Pit Lounge.png" alt="불멍 메인"></li>
+                                <li class="img2"><img src="./img/Cozy Fire-Gazing Blanket.png" alt="어메니티"></li>
+                                <li class="img3"><img src="./img/Tabletop Fire Pit Mockup.png" alt="물결"></li>
+                            </ul>
+                            <div class="promotion_title">
+                                <p>불멍</p>
+                                <p>타오르는 장작불을 바라보며 나누는 이야기.<br>밤하늘의 별과 함께 낭만적인 밤을 보내세요.</p>
+                                <p class="more_btn"><a href="#">MORE VIEW</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="slide_item">
+                    <div class="content_box">
+                        <div class="promotion">
+                            <ul>
+                                <li class="img1"><img src="./img/Night Sky Reflected in Ceiling Pool.png" alt="야경 메인"></li>
+                                <li class="img2"><img src="./img/Modern Outdoor Lantern.png" alt="어메니티"></li>
+                                <li class="img3"><img src="./img/Nighttime Snack Service Mockup.png" alt="물결"></li>
+                            </ul>
+                            <div class="promotion_title">
+                                <p>야경</p>
+                                <p>어둠이 내리면 시작되는 빛의 향연.<br>루마레에서만 만날 수 있는 독보적인 야경 뷰.</p>
+                                <p class="more_btn"><a href="#">MORE VIEW</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="slide_pagination">
+            <div class="line"></div>
+            <div class="pagination_controls">
+                <button type="button" class="slide_btn prev_btn" aria-label="이전 슬라이드">←</button>
+                <div class="fraction">1 / 5</div>
+                <button type="button" class="slide_btn next_btn" aria-label="다음 슬라이드">→</button>
+            </div>
+            <div class="line"></div>
+        </div>
+    </div>
+</section>
+        <section id="reservation">
+                <div class="video-container">
+                    <video src="./img/glitter (2).mp4" autoplay muted loop playsinline></video>
+                </div>
+                <div class="inner">
+                    <div class="pension">
+                        <p>Aesthetic Private Pension</p>
+                        <p><img src="./img/logo.png" alt="#"></p>
+                        <p>‘따스한 노을과 달빛이 함께 하는 <br class="mo-br">오션뷰 감성 독채 풀빌라’</p>
+                        <p>밤이 될수록 더욱 깊어지는 무드<br>달빛이 머무는 집, LUMARE입니다.</p>
+                        <p class="active"><a href="reservation.html">RESERVATION</a></p>
+                    </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="inner">
+            <nav id="end_gnb">
+                <ul class="menu_gnb">
+                    <li class="menu_item">
+                        <ul class="menu_list">
+                            <li class="first">PROLOGUE</li>
+                            <li>풍경</li>
+                        </ul>
+                    </li>
+                    <li class="menu_item">
+                        <ul class="menu_list">
+                            <li class="first">ROOM</li>
+                            <li>거실&부엌</li>
+                            <li>침실1(퀸베드)</li>
+                            <li>침실2(싱글베드)</li>
+                            <li>파우더룸</li>
+                            <li>다이닝룸</li>
+                            <li>프라이빗 자쿠지</li>
+                            <li>시네마룸</li>
+                            <li>개별테라스</li>
+                        </ul>
+                    </li>
+                    <li class="menu_item">
+                        <ul class="menu_list">
+                            <li class="first">EXPERIENCE</li>
+                            <li>야외온수 수영장</li>
+                            <li>아로마테라피</li>
+                            <li>자쿠지</li>
+                            <li>불멍</li>
+                            <li>야경</li>
+                        </ul>
+                    </li>
+                    <li class="menu_item">
+                        <ul class="menu_list">
+                            <li class="first">PROMOTION</li>
+                            <li>입욕제</li>
+                            <li>빔프로젝터</li>
+                            <li>커피머신</li>
+                            <li>오션뷰</li>
+                            <li>따뜻한 차</li>
+                        </ul>
+                    </li>
+                    <li class="menu_item">
+                        <ul class="menu_list">
+                            <li class="first">RESERVATION</li>
+                            <li>예약안내</li>
+                            <li>실시간예약</li>
+                            <li>공지사항</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="footer_info">
+                <div class="footer_logo">
+                <img src="./img/logo_black.png" alt="LUMARE">
+            </div>
+            <div class="company_details">
+                <p>연락처 : 010-0000-0000</p>
+                <p>주소 : 경북 포항시 남구 구룡포읍 일출로 468</p>
+                <p>사업자번호 : 000-00-00000 (대표자 : 000)</p>
+                <p>계좌 : 00은행 0000-00-0000000</p>
+            </div>
+            <div class="sns_icons">
+                <a href="#"><img src="./img/style=instagram.png" alt="instagram"></a>
+                <a href="#"><img src="./img/style=naver blog.png" alt="sns"></a>
+                <a href="#"><img src="./img/style=twitter X.png" alt="sns"></a>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="cursor-follower"></div>
+    <script src="./js/scripts.js"></script>
+     </div>
+    </div>
+    <div id="floating-res">
+        <a href="https://www.naver.com/">
+            <div class="circle-text">
+                <svg viewBox="0 0 100 100" width="100" height="100">
+                    <path id="circlePath" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="transparent" />
+                    <text>
+                        <textPath xlink:href="#circlePath">
+                            RESERVATION • LUMARE • STAY • 
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="center-dot"></div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
