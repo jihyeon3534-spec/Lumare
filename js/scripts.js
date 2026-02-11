@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     trigger: "#space",
                     pin: true,
                     scrub: 1,
-                    start: "top top-=115",
+                    start: "top top-=120",
                     end: () => "+=" + (spaceContainer.scrollWidth - window.innerWidth + window.innerHeight * 3), 
                     invalidateOnRefresh: true,
                 }
@@ -311,3 +311,34 @@ if (floatingBtn) {
         }
     });
 }
+
+    // #day 섹션 애니메이션 타임라인
+    const dayTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#day",       // 애니메이션 기준점
+            start: "top 75%",      // 섹션의 윗부분이 화면 75% 지점에 오면 시작
+            toggleActions: "play none none reverse" // 올리면 다시 사라짐
+        }
+    });
+
+    dayTl
+    // 1. 영어 제목 등장
+    .from("#day .service .english", { 
+        y: 20, opacity: 0, duration: 0.6, ease: "power2.out" 
+    })
+    // 2. 한글 제목 등장 (약간 시차)
+    .from("#day .service p:not(.english)", { 
+        y: 20, opacity: 0, duration: 0.6, ease: "power2.out" 
+    }, "-=0.4")
+    // 3. 아이콘들 순차적 등장 (핵심: stagger)
+    .from("#day .icon li", {
+        y: 30, 
+        opacity: 0, 
+        duration: 0.6, 
+        stagger: 0.15, // 0.15초 간격으로 하나씩 등장
+        ease: "back.out(1.7)" // 살짝 튀어오르는 느낌
+    }, "-=0.2")
+    // 4. 웨이브 배경 서서히 등장
+    .from(".flow_area", { 
+        opacity: 0, duration: 1.2 
+    }, "-=0.8");

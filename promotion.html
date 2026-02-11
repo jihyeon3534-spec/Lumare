@@ -5,105 +5,255 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promotion | Lumare Luxury Resort</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+KR:wght@100;300;400;500&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
     
     <style>
+
+        
         /* --- Root & Variables --- */
         :root {
             --gold: #cbb89e;
+            --gold-dark: #bba78d;
             --dark: #1e2a35;
-            --text-light: #777;
-            --bg-soft: #f9f7f4;
-            --sans: 'Noto Sans KR', sans-serif;
-            --serif: 'Cormorant Garamond', serif;
-            --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --text-gray: #666;
+            --bg-light: #fdfaf7;
+            --white: #ffffff;
+            --transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         /* --- Reset --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--sans); color: var(--dark); background: #fff; line-height: 1.7; overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; }
-        img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        body { font-family: "Nanum Gothic", sans-serif; color: var(--dark); background: var(--bg-light); line-height: 1.7; word-break: keep-all; }
+        a { text-decoration: none; color: inherit; display: inline-block; }
+        img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s ease; }
+        ul, li { list-style: none; }
 
-        /* --- Common --- */
-        .inner { max-width: 1400px; margin: 0 auto; padding: 0 4%; }
-        
         /* --- Header --- */
-        #main-header { width: 100%; height: 90px; background: #fff; border-bottom: 1px solid #f0f0f0; position: fixed; top: 0; z-index: 1000; }
-        #main-header .inner { display: flex; justify-content: space-between; align-items: center; height: 100%; }
-        #logo h1 { font-family: var(--serif); font-size: 32px; letter-spacing: 5px; }
-        #gnb ul { display: flex; gap: 40px; list-style: none; }
-        #gnb ul li a { font-size: 13px; font-weight: 500; letter-spacing: 1px; color: var(--dark); transition: 0.3s; }
-        #gnb ul li.active a { color: var(--gold); }
-        #gnb ul li a:hover { color: var(--gold); }
+    header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  transition: all 0.4s ease;
+  border-bottom: 1px solid rgba(246, 243, 238, 0.1);
+  background-color: transparent;
+  font-weight: bold;
+}
+
+header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  max-width: 1620px;
+  margin: 0 auto;
+  transition: all 0.4s ease;
+}
+
+header #logo img {
+  width: 65px;
+  transition: all 0.4s ease;
+}header #gnb ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+header #gnb ul li {
+  display: flex;
+  align-items: center;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 500;
+}
+
+/* 구분선(|) 설정 */
+header #gnb ul li::after {
+  content: '|';
+  margin-left: 20px;
+  color: #F6F1E8;
+  font-weight: normal;
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+header #gnb ul li:last-child::after {
+  content: none;
+}
+
+header #gnb ul li a {
+  text-decoration: none;
+  color: #F6F1E8;
+  font-size: 14px;
+  transition: color 0.4s ease;
+}
+
+header #gnb ul li a.btn-menu-open {
+  display: flex;
+  align-items: center;
+}
+
+header #gnb ul li a.btn-menu-open img {
+  width: 24px;
+  cursor: pointer;
+}header.on {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+header.on #logo img, 
+header.on .btn-menu-open img {
+  filter: invert(1);
+}
+
+header.on #gnb ul li::after {
+  color: #333;
+  opacity: 0.2;
+}
+
+header.on #gnb ul li a {
+  color: #333;
+}/* 최대폭 1620px 이하 */
+@media (max-width: 1620px) {
+  header .inner {
+    padding: 0 4% !important;
+  }
+}
+
+/* 태블릿/모바일 768px 이하 */
+@media (max-width: 768px) {
+  header #gnb ul li.none {
+    display: none;
+  }
+
+  header #gnb ul li::after {
+    display: none;
+  }
+}
+
+/* 초소형 기기 350px 이하 */
+@media (max-width: 350px) {
+  header .inner {
+    height: 60px;
+  }
+
+  header #logo img {
+    width: 45px;
+  }
+}
 
         /* --- Sub Visual --- */
         .sub-visual { 
-            height: 450px; 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop') no-repeat center/cover;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; margin-top: 90px;
+            height: 55vh; min-height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('./img/Promotion\ Hero\ Banner\ Mockup\ \(Ocean\ &\ Coffee\).png') no-repeat center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            color: #fff; text-align: center; margin-top: 0;
         }
-        .sub-visual h2 { font-family: var(--serif); font-size: 60px; font-weight: 300; letter-spacing: 12px; margin-bottom: 10px; }
-        .sub-visual p { font-size: 15px; font-weight: 200; letter-spacing: 4px; text-transform: uppercase; opacity: 0.9; }
+        .sub-visual h2 { font-family: "Playfair Display", serif; font-size: clamp(40px, 5vw, 64px); font-weight: 400; letter-spacing: 10px; margin-bottom: 15px; }
+        .sub-visual p { font-size: 14px; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; opacity: 0.9; }
 
-        /* --- Promotion Section --- */
-        .promotion-wrapper { padding: 120px 0; }
-        .promo-intro { text-align: center; margin-bottom: 80px; }
-        .promo-intro span { color: var(--gold); font-size: 13px; letter-spacing: 5px; font-weight: 500; }
-        .promo-intro h3 { font-family: var(--serif); font-size: 42px; margin-top: 10px; font-weight: 400; }
+        /* --- Promotion Layout --- */
+        .promotion-wrapper { padding: 120px 5%; max-width: 1400px; margin: 0 auto; }
+        
+        .promo-intro { text-align: center; margin-bottom: 90px; }
+        .promo-intro span { color: var(--gold); font-size: 12px; letter-spacing: 4px; font-weight: 700; display: block; margin-bottom: 15px; }
+        .promo-intro h3 {  font-family: "Nanum Myeongjo", serif; font-size: 42px; font-weight: 500; color: var(--dark); }
 
-        /* --- Promo Grid (Magazine Style) --- */
+        /* --- Grid System --- */
         .promo-grid { 
             display: grid; 
-            grid-template-columns: repeat(12, 1fr); 
-            gap: 40px; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 60px 40px; 
         }
 
+        /* Card Styles */
         .promo-card { 
-            position: relative; overflow: hidden; background: #fff; 
-            display: flex; flex-direction: column; transition: var(--transition);
+            background: #fff; 
+            overflow: hidden; 
+            display: flex; flex-direction: column; 
+            transition: var(--transition);
         }
         
-        /* Layout Variations */
-        .item-ocean { grid-column: span 12; display: flex; flex-direction: row; height: 500px; background: var(--bg-soft); }
-        .item-ocean .img-w { flex: 1.5; }
-        .item-ocean .txt-w { flex: 1; padding: 60px; justify-content: center; }
+        .promo-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
 
-        .item-spa { grid-column: span 7; }
-        .item-cinema { grid-column: span 5; }
-        .item-coffee { grid-column: span 5; }
-        .item-tea { grid-column: span 7; }
+        .img-w { 
+            width: 100%; height: 350px; overflow: hidden; position: relative; 
+        }
+        .promo-card:hover .img-w img { transform: scale(1.1); }
+        .img-w::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.1); transition: 0.3s; opacity: 0;
+        }
+        .promo-card:hover .img-w::after { opacity: 1; }
 
-        /* Card Elements */
-        .img-w { width: 100%; height: 400px; overflow: hidden; position: relative; }
-        .promo-card:hover .img-w img { transform: scale(1.08); }
+        .txt-w { padding: 35px 25px; display: flex; flex-direction: column; align-items: flex-start; }
         
-        .txt-w { padding: 30px 10px; display: flex; flex-direction: column; }
-        .txt-w .category { color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
-        .txt-w h4 { font-family: var(--serif); font-size: 28px; margin-bottom: 15px; font-weight: 400; }
-        .txt-w p { font-size: 14px; color: var(--text-light); line-height: 1.8; margin-bottom: 25px; word-break: keep-all; }
+        .category { 
+            color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 2px; 
+            text-transform: uppercase; margin-bottom: 12px; display: block;
+        }
+        .promo-card h4 { 
+            font-family: "Nanum Myeongjo", serif; font-size: 32px; margin-bottom: 18px; 
+            font-weight: 500; color: var(--dark); line-height: 1.2;
+        }
+        .promo-card p { 
+            font-size: 15px; color: var(--text-gray); line-height: 1.8; margin-bottom: 30px; 
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+        }
         
+        /* Button Style */
         .link-more { 
-            font-size: 12px; font-weight: 600; letter-spacing: 2px; color: var(--dark); 
-            display: flex; align-items: center; gap: 10px; transition: 0.3s;
+            font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--dark); 
+            position: relative; padding-bottom: 5px;
         }
-        .link-more::after { content: ""; width: 30px; height: 1px; background: var(--dark); transition: 0.3s; }
-        .link-more:hover { color: var(--gold); }
-        .link-more:hover::after { width: 50px; background: var(--gold); }
+        .link-more::after { 
+            content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; 
+            background: var(--dark); transition: 0.3s; transform-origin: right; transform: scaleX(0);
+        }
+        .promo-card:hover .link-more { color: var(--gold-dark); }
+        .promo-card:hover .link-more::after { background: var(--gold-dark); transform-origin: left; transform: scaleX(1); }
+
+        /* --- Special Layout --- */
+        .item-ocean { 
+            grid-column: 1 / -1; 
+            flex-direction: row; 
+            background: #fff;
+            align-items: center;
+            height: 450px;
+        }
+        .item-ocean .img-w { width: 60%; height: 100%; }
+        .item-ocean .txt-w { width: 40%; padding: 60px; justify-content: center; margin: 20px 20px;}
+        .item-ocean h4 { font-size: 42px; margin-bottom: 25px;  font-family: "Nanum Myeongjo", serif;  }
+
+        /* --- GSAP Initial States (초기 숨김 처리) --- */
+        .gsap-reveal { opacity: 0; visibility: hidden; } 
 
         /* --- Responsive --- */
-        @media (max-width: 1040px) {
+        @media (max-width: 1024px) {
+            .promotion-wrapper { padding: 100px 5%; }
+            .promo-grid { gap: 40px; }
+            
             .item-ocean { flex-direction: column; height: auto; }
-            .item-spa, .item-cinema, .item-coffee, .item-tea { grid-column: span 6; }
-            .sub-visual h2 { font-size: 44px; letter-spacing: 8px; }
+            .item-ocean .img-w { width: 100%; height: 400px; padding: 20px 20px;}
+            .item-ocean .txt-w { width: 100%; padding: 40px 0; }
+            .item-ocean h4 { font-size: 36px; }
+            
+            .promo-card .img-w { height: 300px; }
         }
 
         @media (max-width: 768px) {
-            .promo-grid { gap: 60px; }
-            .item-spa, .item-cinema, .item-coffee, .item-tea { grid-column: span 12; }
-            .img-w { height: 300px; }
-            .sub-visual { height: 350px; }
+            #main-header .inner { padding: 0 20px; }
+            #gnb { display: none; }
+            
+            .promo-grid { grid-template-columns: 1fr; gap: 60px; }
+            .sub-visual { height: 40vh; }
+            .promo-intro h3 { font-size: 32px; }
+            
+            .item-ocean h4, .promo-card h4 { font-size: 28px; }
+            .txt-w { padding: 25px 20px}
         }
     </style>
 </head>
@@ -112,14 +262,18 @@
     <header id="main-header">
         <div class="inner">
             <div id="logo">
-                <h1><img src="./img/logo.svg" alt="#"></h1>
+                <h1><a href="#"><img src="./img/logo.svg" alt="로고"></a></h1>
             </div>
             <nav id="gnb">
                 <ul>
-                    <li><a href="reservation.html">RESERVATION</a></li>
-                    <li class="active"><a href="promotion.html">PROMOTION</a></li>
-                    <li><a href="#">FACILITIES</a></li>
-                    <li><a href="#"><img src="./img/menu_22dp_F3EFE7_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" style="width: 20px;"></a></li>
+                    <li class="none active"><a href="reservation.html">RESERVATION</a></li>
+                    <li class="none active"><a href="promotion.html">PROMOTION</a></li>
+                    <li class="none"><a href="#">FACILITIES</a></li>
+                    <li>
+                        <a href="#" class="btn-menu-open">
+                            <img src="./img/menu_22dp_F3EFE7_FILL0_wght400_GRAD0_opsz24.svg" alt="메뉴열기">
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -127,73 +281,71 @@
 
     <main id="promotion-page">
         <section class="sub-visual">
-            <h2>PROMOTION</h2>
-            <p>Elevating Your Experience</p>
+            <div class="gsap-reveal hero-text">
+                <h2>PROMOTION</h2>
+                <p>오직 당신만을 위해 열린 바다, 누구의 방해도 없는 완벽한 휴식을 선물합니다</p>
+            </div>
         </section>
 
-        <section class="promotion-wrapper inner">
-            <div class="promo-intro">
+        <section class="promotion-wrapper">
+            <div class="promo-intro gsap-reveal">
                 <span>SPECIAL OFFER</span>
                 <h3>루마레가 제안하는 다섯 가지 휴식</h3>
             </div>
 
             <div class="promo-grid">
                 
-                <article class="promo-card item-ocean">
+                <article class="promo-card item-ocean gsap-reveal">
                     <div class="img-w">
-                        <img src="./img/Night Sky Reflected in Ceiling Pool.png" alt="오션뷰">
+                        <img src="./img/Open Ocean View Living Space.png" alt="오션뷰">
                     </div>
                     <div class="txt-w">
                         <span class="category">Experience 01</span>
                         <h4>영원한 푸름, 오션뷰</h4>
-                        <p>창 너머로 펼쳐지는 파노라마 해안선. 루마레의 모든 객실은 바다를 가장 아름답게 조망할 수 있는 각도로 설계되었습니다.</p>
+                        <p>창 너머로 펼쳐지는 파노라마 해안선. 루마레의 모든 객실은 바다를 가장 아름답게 조망할 수 있는 각도로 설계되어, 머무는 모든 순간 자연과 하나 되는 경험을 선사합니다.</p>
                         <a href="#" class="link-more">READ MORE</a>
                     </div>
                 </article>
 
-                
-                <article class="promo-card item-spa">
+                <article class="promo-card gsap-reveal">
                     <div class="img-w">
-                        <img src="./img/Soap and Stone Spa Scene.png" alt="입욕제">
+                        <img src="./img/Ocean Bath Bomb Display.png" alt="입욕제">
                     </div>
                     <div class="txt-w">
                         <span class="category">Experience 02</span>
                         <h4>프라이빗 테라피, 입욕제</h4>
-                        <p>전문 조향사가 블렌딩한 루마레 시그니처 입욕제로 하루의 피로를 씻어내세요. 당신의 스파 시간을 향기로 채워드립니다.</p>
+                        <p>전문 조향사가 블렌딩한 루마레 시그니처 입욕제로 하루의 피로를 씻어내세요. 오직 당신만을 위한 프라이빗 스파가 준비되어 있습니다.</p>
                         <a href="#" class="link-more">READ MORE</a>
                     </div>
                 </article>
 
-                
-                <article class="promo-card item-cinema">
+                <article class="promo-card gsap-reveal">
                     <div class="img-w">
-                        <img src="./img/Luxury Fire Pit Lounge.png" alt="빔프로젝터">
+                        <img src="./img/Outdoor Fire Pit Projector.png" alt="빔프로젝터">
                     </div>
                     <div class="txt-w">
                         <span class="category">Experience 03</span>
-                        <h4>나만의 시네마, 빔프로젝터</h4>
-                        <p>최고급 사운드 시스템과 4K 빔프로젝터가 선사하는 몰입감. 좋아하는 영화와 함께 프라이빗한 저녁을 완성하세요.</p>
+                        <h4>나만의 시네마</h4>
+                        <p>최고급 사운드 시스템과 4K 빔프로젝터가 선사하는 몰입감. 파도 소리를 배경음악 삼아 좋아하는 영화와 함께 낭만적인 밤을 완성하세요.</p>
                         <a href="#" class="link-more">READ MORE</a>
                     </div>
                 </article>
 
-                
-                <article class="promo-card item-coffee">
+                <article class="promo-card gsap-reveal">
                     <div class="img-w">
-                        <img src="./img/Modern Outdoor Lantern.png" alt="커피머신">
+                        <img src="./img/Coffee with Ocean View.png" alt="커피머신">
                     </div>
                     <div class="txt-w">
                         <span class="category">Experience 04</span>
                         <h4>아침의 향기, 커피머신</h4>
-                        <p>신선한 원두 캡슐과 함께 준비된 이탈리아 명품 커피머신. 바다 안개를 바라보며 즐기는 에스프레소 한 잔의 여유를 느껴보세요.</p>
+                        <p>이탈리아 명품 커피머신과 신선한 스페셜티 캡슐. 아침 바다 안개를 바라보며 즐기는 에스프레소 한 잔의 여유를 느껴보세요.</p>
                         <a href="#" class="link-more">READ MORE</a>
                     </div>
                 </article>
 
-                
-                <article class="promo-card item-tea">
+                <article class="promo-card gsap-reveal">
                     <div class="img-w">
-                        <img src="./img/Cozy Fire-Gazing Blanket.png" alt="따뜻한 차">
+                        <img src="./img/Woman Pouring Tea (Side Profile).png" alt="따뜻한 차">
                     </div>
                     <div class="txt-w">
                         <span class="category">Experience 05</span>
@@ -202,9 +354,58 @@
                         <a href="#" class="link-more">READ MORE</a>
                     </div>
                 </article>
+
             </div>
         </section>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 1. 히어로 섹션 텍스트 (천천히 등장)
+            gsap.fromTo(".sub-visual .gsap-reveal", 
+                { autoAlpha: 0, y: 60 }, 
+                { autoAlpha: 1, y: 0, duration: 2, ease: "power3.out", delay: 0.5 }
+            );
+
+            // 2. 인트로 텍스트 (스크롤 시 우아하게 등장)
+            gsap.fromTo(".promo-intro", 
+                { autoAlpha: 0, y: 60 },
+                { 
+                    scrollTrigger: {
+                        trigger: ".promo-intro",
+                        start: "top 85%", 
+                    },
+                    autoAlpha: 1, 
+                    y: 0, 
+                    duration: 2, // 1초 -> 1.5초로 늘림 (더 천천히)
+                    ease: "power3.out" 
+                }
+            );
+
+            // 3. 카드 순차 등장 (Batch) - 시간차와 지속시간을 늘림
+            ScrollTrigger.batch(".promo-card", {
+                start: "top 70%", // 화면 하단에 조금 더 일찍 감지되도록 설정
+                onEnter: (elements, triggers) => {
+                    gsap.fromTo(elements, 
+                        { autoAlpha: 0, y: 80 }, // 아래에서 올라오는 거리도 살짝 늘림 (60 -> 80)
+                        { 
+                            autoAlpha: 1, 
+                            y: 0, 
+                            stagger: 0.4,  // 카드 간 간격: 0.2초 -> 0.4초 (하나 나오고 한참 뒤에 다음 것)
+                            duration: 1.8, // 움직이는 시간: 1.2초 -> 1.8초 (아주 부드럽게)
+                            ease: "power4.out", // 끝부분에서 더 부드럽게 감속
+                            overwrite: true 
+                        }
+                    );
+                },
+                once: true // 한 번만 실행 (스크롤 다시 올려도 사라지지 않음 -> 고급스러움 유지)
+            });
+        });
+    </script>
 </body>
 </html>
